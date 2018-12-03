@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import login from '@/components/login'
-import posts from '@/components/posts'
-import home from '@/components/home'
-import booklist from '@/components/booklist'
+import itemlist from '@/components/itemlist'
+import edititem from '@/components/edititem'
+import additem from '@/components/additem'
+
 Vue.use(Router)
 
 export default new Router({
@@ -14,19 +15,19 @@ export default new Router({
       component: login
     },
     {
-      path: '/posts',
-      name: 'posts',
-      component: posts
+      path: '/itemlist',
+      name: 'itemlist',
+      component: itemlist
     },
     {
-      path: '/home',
-      name: 'home',
-      component: home
+      path: '/edititem',
+      name: 'edititem',
+      component: edititem
     },
     {
-      path: '/booklist',
-      name: 'booklist',
-      component: booklist
+      path: '/additem',
+      name: 'additem',
+      component: additem
     }
   ]
 })

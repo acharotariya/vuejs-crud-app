@@ -1,4 +1,4 @@
 module.exports = {
-    secret: 'abcdefgabcdefg',
-    database: 'mongodb://localhost:27017/vuejscrudapp',
+    secret: 'enter your secret',
+    database: 'enter your mongodb url',
 };

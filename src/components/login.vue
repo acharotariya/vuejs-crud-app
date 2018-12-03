@@ -1,8 +1,8 @@
 <template>
-  <div class="hello">
+  <div class="hello" style="height: -webkit-fill-available;overflow: hidden">
     	<!--header-->
 	<div class="header-w3l">
-		<h1>Shine Login Form</h1>
+		<h1>vuejs-crud-app</h1>
 	</div>
 	<!--//header-->
 	<div class="main-content-agile">
@@ -20,11 +20,11 @@
 				<div class="sub-w3l">
 					<div class="sub-agile">
 						<input type="checkbox" id="brand1" value="">
-						<label for="brand1">
-							<span></span>Remember me</label>
+						<!-- <label for="brand1"> -->
+							<!-- <span></span>Remember me</label> -->
 					</div>
-					<a href="#">Forgot Password?</a>
-					<div class="clear"></div>
+					<!-- <a href="#">Forgot Password?</a> -->
+					<!-- <div class="clear"></div> -->
 				</div>
 				<div class="right-w3l">
 					<input type="submit" value="Login" @click="login">
@@ -35,17 +35,13 @@
 	<!--//main-->
 	<!--footer-->
 	<div class="footer">
-		<p>&copy; 2018 Shine Login Form. All rights reserved | Design by
-			<a href="http://w3layouts.com">W3layouts</a>
-		</p>
+		
 	</div>
 	<!--//footer-->
   </div>
 </template>
 
 <script>
-import PostsService from '@/services/postservice'
-import home from './home'
 import axios from 'axios';
 import $ from 'jquery'
 
@@ -66,16 +62,15 @@ export default {
     async login(event) {
         console.log("login called")
           event.preventDefault();
-          console.log('email', this.email)
         await axios.post('http://localhost:3001/login', {
         email: this.email,
         password: this.password
     })
     .then((response) => {
-        console.log(response);
-        console.log('router =====>', this.$router)
+        // console.log(response);
+        // console.log('router =====>', this.$router)
         
-        this.$router.push({name:'booklist'}) 
+        this.$router.push({name:'itemlist'}) 
     })
     .catch(function (error) {
         console.log(error);
@@ -87,27 +82,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-} */
 
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
 /* reset */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;background-color: lightblue;}
 article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}

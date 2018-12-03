@@ -2,7 +2,7 @@ let mongoose = require('mongoose');
 
 const { database, secret } = require('../config');
 mongoose.Promise = global.Promise;
-mongoose.connect(database);
+mongoose.connect(database,{ useNewUrlParser: true });
 var db = mongoose.connection;
 // console.log("db", db)
 
